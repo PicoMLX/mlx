@@ -3171,7 +3171,8 @@ array floor_divide(
   auto zero = array(0, dtype);
   auto step = logical_and(
       not_equal(rem, zero, s),
-      not_equal(less(a, zero, s), less(b, zero, s), s));
+      not_equal(less(a, zero, s), less(b, zero, s), s),
+      s);
   return subtract(quotient, astype(step, dtype, s), s);
 }
 
