@@ -51,12 +51,14 @@ class TCPSocket {
     return sock_;
   }
 
+  // If source is given, bind to it before each attempt.
   static TCPSocket connect(
       const char* tag,
       const address_t& addr,
       int num_retries = 1,
       int wait = 0,
-      std::function<void(int, int)> cb = nullptr);
+      std::function<void(int, int)> cb = nullptr,
+      const address_t* source = nullptr);
 
  private:
   TCPSocket(int sock);

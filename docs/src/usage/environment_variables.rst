@@ -48,6 +48,12 @@ sets them.
    Enable verbose logging for the Ring backend. This variable is enabled by
    its presence.
 
+.. envvar:: MLX_RING_SOURCE_IPS
+
+   Comma-separated IPs that the Ring backend binds its outgoing connections
+   to, one for each address of the next rank in the host file. The OS selects
+   the ports. If it is not set, the OS also selects the IPs.
+
 .. envvar:: MLX_IBV_DEVICES
 
    The path to the JSON device-connectivity file used by JACCL.
